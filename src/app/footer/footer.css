@@ -1,0 +1,35 @@
+/* FOOTER - inspirat de Bootstrap footer */
+footer {
+    background-color: #212529;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+    border-top: 3px solid #00d084;
+}
+
+footer p {
+    margin: 0;
+    color: #adb5bd;
+}
+
+footer a {
+    color: #00d084;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    footer {
+        font-size: 14px;
+    }
+}

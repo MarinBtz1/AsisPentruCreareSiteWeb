@@ -1,0 +1,61 @@
+/* CONTENT - inspirat de Bootstrap cards și containers */
+body {
+    background-color: #f8f9fa;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #212529;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.text-danger {
+    color: #dc3545;
+    font-weight: bold;
+    text-align: center;
+}
+
+.text-primary {
+    color: #007bff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Background similar Bootstrap */
+#principal {
+    background-image: url("https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

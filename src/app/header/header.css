@@ -1,0 +1,37 @@
+/* HEADER - inspirat de Bootstrap navbar */
+header {
+    background-color: #343a40;
+    padding: 15px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: #f8f9fa;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #00d084;
+}
+
+.navbar a.active {
+    color: #ffc107;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
