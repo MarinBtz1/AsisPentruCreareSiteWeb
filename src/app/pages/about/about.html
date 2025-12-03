@@ -1,0 +1,60 @@
+<section class="container about-grid">
+  <article>
+    <p class="text-uppercase text-secondary small mb-1">Raport Lucrarea 6</p>
+    <h1 class="h3 fw-semibold mb-3">Funcționalități implementate</h1>
+    <p class="text-secondary">
+      Aplicația demonstrează componentizare standalone, rutare declarativă, servicii cu DI și flux
+      asincron prin Observable + async pipe. Datele sunt încărcate o singură dată dintr-un fișier
+      <code>JSON</code> și sunt păstrate în memorie prin serviciul <code>ItemsService</code>.
+    </p>
+
+    <ul class="list-group shadow-sm">
+      <li class="list-group-item">
+        <strong>Rutare:</strong> `app.routes.ts` definește paginile home, list, details și about.
+      </li>
+      <li class="list-group-item">
+        <strong>Servicii:</strong> `ItemsService` citește `assets/data/items.json` și expune datele prin
+        Observable.
+      </li>
+      <li class="list-group-item">
+        <strong>Formulare reactive:</strong> exemplul de mai jos validează datele și oferă feedback în
+        timp real.
+      </li>
+    </ul>
+  </article>
+
+  <form class="card shadow-sm border-0" [formGroup]="contactForm" (ngSubmit)="submit()">
+    <div class="card-body">
+      <h2 class="h5 fw-semibold mb-3">Contact rapid</h2>
+      <div class="mb-3">
+        <label class="form-label">Nume complet</label>
+        <input class="form-control" type="text" formControlName="name" placeholder="ex. Ana Ionescu" />
+        <div class="text-danger small mt-1" *ngIf="contactForm.controls.name.touched && contactForm.controls.name.invalid">
+          Minim 3 caractere obligatorii.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input class="form-control" type="email" formControlName="email" placeholder="ex. ana@email.com" />
+        <div class="text-danger small mt-1" *ngIf="contactForm.controls.email.touched && contactForm.controls.email.invalid">
+          Introdu un email valid.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Mesaj</label>
+        <textarea class="form-control" rows="4" formControlName="message" placeholder="Spune-ne ce îmbunătățiri îți dorești"></textarea>
+        <div class="text-danger small mt-1" *ngIf="contactForm.controls.message.touched && contactForm.controls.message.invalid">
+          Mesajul trebuie să conțină cel puțin 10 caractere.
+        </div>
+      </div>
+
+      <button class="btn btn-dark w-100" type="submit">Trimite mesajul</button>
+
+      <div class="alert alert-success mt-3 mb-0" *ngIf="formSent()">
+        Mulțumim! Mesajul tău a fost înregistrat.
+      </div>
+    </div>
+  </form>
+</section>

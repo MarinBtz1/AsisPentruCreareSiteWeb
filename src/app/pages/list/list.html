@@ -1,0 +1,21 @@
+<section class="container">
+  <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+    <div>
+      <p class="text-uppercase text-secondary small mb-1">Catalog complet</p>
+      <h1 class="h3 fw-semibold mb-0">Toate articolele disponibile</h1>
+    </div>
+    <a class="btn btn-outline-dark" routerLink="/about">Despre proiect</a>
+  </header>
+
+  <div *ngIf="items$ | async as items; else loading">
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let item of items">
+        <app-item-card [item]="item"></app-item-card>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="text-center py-5 text-secondary">Se încarcă datele din JSON...</div>
+  </ng-template>
+</section>

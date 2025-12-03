@@ -1,0 +1,64 @@
+[
+  {
+    "id": "1",
+    "title": "Sacou business din lână",
+    "category": "Bărbați",
+    "price": 980,
+    "image": "assets/Haine-pentru-barbati-Chic-Chic.jpg",
+    "description": "Sacou slim fit din lână merinos, ideal pentru întâlniri de business și evenimente formale.",
+    "availableSizes": ["48", "50", "52"],
+    "stock": 8
+  },
+  {
+    "id": "2",
+    "title": "Rochie midi vaporoasă",
+    "category": "Femei",
+    "price": 620,
+    "image": "https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg",
+    "description": "Rochie din voal cu imprimeu floral, perfectă pentru evenimente de zi sau seri relaxate.",
+    "availableSizes": ["S", "M", "L"],
+    "stock": 15
+  },
+  {
+    "id": "3",
+    "title": "Tricou din bumbac organic",
+    "category": "Unisex",
+    "price": 150,
+    "image": "https://images.pexels.com/photos/10026491/pexels-photo-10026491.jpeg",
+    "description": "Tricou respirabil, 100% bumbac organic, disponibil în culori neutre.",
+    "availableSizes": ["S", "M", "L", "XL"],
+    "stock": 42
+  },
+  {
+    "id": "4",
+    "title": "Geacă parka impermeabilă",
+    "category": "Outdoor",
+    "price": 780,
+    "image": "https://images.pexels.com/photos/6311657/pexels-photo-6311657.jpeg",
+    "description": "Geacă parka căptușită, cu tratament impermeabil și glugă detasabilă.",
+    "availableSizes": ["M", "L", "XL"],
+    "stock": 5
+  },
+  {
+    "id": "5",
+    "title": "Sneakers eco-friendly",
+    "category": "Încălțăminte",
+    "price": 540,
+    "image": "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg",
+    "description": "Pantofi sport realizați din materiale reciclate, cu talpă flexibilă.",
+    "availableSizes": ["38", "39", "40", "41", "42"],
+    "stock": 27
+  },
+  {
+    "id": "6",
+    "title": "Rucsac urban din piele",
+    "category": "Accesorii",
+    "price": 450,
+    "image": "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg",
+    "description": "Rucsac minimalist din piele naturală, cu compartimente pentru laptop și accesorii.",
+    "availableSizes": [],
+    "stock": 19
+  }
+]
+
+

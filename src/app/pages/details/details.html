@@ -1,0 +1,37 @@
+<section class="container">
+  <a class="text-decoration-none small d-inline-flex align-items-center gap-2 mb-3" routerLink="/list">
+    ← Înapoi la listă
+  </a>
+
+  <ng-container *ngIf="item$ | async as item; else missing">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-5">
+        <img class="img-fluid rounded-4 shadow-sm" [src]="item.image" [alt]="item.title" />
+      </div>
+      <div class="col-md-7">
+        <p class="text-uppercase text-secondary small mb-2">{{ item.category }}</p>
+        <h1 class="h3 fw-semibold">{{ item.title }}</h1>
+        <p class="lead text-secondary">{{ item.description }}</p>
+        <div class="d-flex gap-4 align-items-center my-3">
+          <span class="display-6 fw-bold text-primary">{{ item.price | currency: 'RON' }}</span>
+          <span class="badge" [class.bg-success]="item.stock > 0" [class.bg-danger]="item.stock === 0">
+            {{ item.stock > 0 ? (item.stock + ' în stoc') : 'Stoc epuizat' }}
+          </span>
+        </div>
+
+        <div *ngIf="item.availableSizes.length">
+          <p class="fw-semibold mb-1">Mărimi disponibile</p>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge rounded-pill text-bg-dark" *ngFor="let size of item.availableSizes">
+              {{ size }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #missing>
+    <div class="alert alert-warning mt-4">Produsul nu a fost găsit.</div>
+  </ng-template>
+</section>

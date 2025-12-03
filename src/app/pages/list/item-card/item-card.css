@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+.item-card img {
+  object-fit: cover;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
+

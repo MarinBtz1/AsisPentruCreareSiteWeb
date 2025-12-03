@@ -1,38 +1,18 @@
-/* HEADER - inspirat de Bootstrap navbar */
-nav {
-    background-color: #343a40;
-    padding: 15px 0;
+.navbar {
+  padding-block: 1rem;
 }
 
-nav ul {
-    list-style: square;
-    display: flex;
-    justify-content: center;
+.navbar-brand {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-nav ul li {
-    margin: 0 20px;
-}
-nav ul li a {
-    color: #f8f9fa;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
+.nav-link {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-nav ul li a:hover {
-    color: #00d084;
-}
-
-nav ul li a.active {
-    color: #ffc107;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 15px;
-    }
+.nav-link.active {
+  color: #ffc107 !important;
 }

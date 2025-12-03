@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.hero {
+  padding-top: 1rem;
+}
+
+.hero img {
+  max-height: 360px;
+  object-fit: cover;
+}
+
+

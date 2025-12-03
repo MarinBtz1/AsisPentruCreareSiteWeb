@@ -1,8 +1,33 @@
 
-<nav>
-        <ul>
-            <li><a href="#">Acasă</a></li>
-            <li><a href="#">Produse</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" routerLink="/">Asis Boutique</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto gap-lg-2">
+        <li class="nav-item" *ngFor="let link of navLinks">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="link.path"
+            [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          >
+            {{ link.label }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

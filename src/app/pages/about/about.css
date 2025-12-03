@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+form .form-label {
+  font-weight: 600;
+}
+
+

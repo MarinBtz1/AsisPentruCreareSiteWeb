@@ -2,6 +2,8 @@
   display: block;
 }
 
-footer {
-  font-size: 0.95rem;
+img {
+  object-fit: cover;
 }
+
+

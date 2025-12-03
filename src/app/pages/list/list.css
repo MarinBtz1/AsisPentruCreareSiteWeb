@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+
+section {
+  min-height: 50vh;
+}
+
+
