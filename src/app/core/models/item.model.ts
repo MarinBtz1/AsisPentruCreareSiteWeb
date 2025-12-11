@@ -8,5 +8,3 @@ export interface Item {
   availableSizes: string[];
   stock: number;
 }
-
-

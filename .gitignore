@@ -42,3 +42,8 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 .env
+
+# Firebase
+**/serviceAccountKey.json
+**/*-service-account*.json
+server/.env

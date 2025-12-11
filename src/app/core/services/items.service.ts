@@ -49,4 +49,3 @@ export class ItemsService {
     return of(nextItem);
   }
 }
-

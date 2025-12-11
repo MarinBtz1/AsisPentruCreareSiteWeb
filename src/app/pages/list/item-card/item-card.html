@@ -7,7 +7,7 @@
     <h3 class="h5">{{ item.title }}</h3>
     <p class="text-secondary small flex-grow-1">{{ item.description }}</p>
 
-    <ul class="list-inline small mb-3 text-secondary" *ngIf="item.availableSizes.length">
+    <ul class="list-inline small mb-3 text-secondary" *ngIf="item.availableSizes && item.availableSizes.length > 0">
       <li class="list-inline-item fw-semibold">Mărimi:</li>
       <li class="list-inline-item" *ngFor="let size of item.availableSizes">
         <span class="badge bg-light text-dark">{{ size }}</span>
