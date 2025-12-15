@@ -50,21 +50,38 @@
   </div>
 
   <!-- Items List -->
-  <div *ngIf="items$ | async as items">
-    <div *ngIf="getFilteredAndSortedItems(items).length > 0; else noResults">
-      <div class="row g-4">
-        <div class="col-md-4" *ngFor="let item of getFilteredAndSortedItems(items)">
-          <app-item-card [item]="item"></app-item-card>
+  <div *ngIf="items$ | async as items; else loading">
+    <div *ngIf="items.length > 0">
+      <div *ngIf="getFilteredAndSortedItems(items).length > 0; else noResults">
+        <div class="row g-4">
+          <div class="col-md-4" *ngFor="let item of getFilteredAndSortedItems(items)">
+            <app-item-card [item]="item"></app-item-card>
+          </div>
         </div>
+        <p class="text-muted mt-3">
+          Afișate {{ getFilteredAndSortedItems(items).length }} din {{ items.length }} produse
+        </p>
       </div>
-      <p class="text-muted mt-3">
-        Afișate {{ getFilteredAndSortedItems(items).length }} din {{ items.length }} produse
-      </p>
+      <ng-template #noResults>
+        <div class="alert alert-info">
+          <strong>Nu s-au găsit produse</strong> care să corespundă criteriilor de căutare.
+          <br>
+          <small>Încearcă să modifici termenii de căutare sau filtrele.</small>
+        </div>
+      </ng-template>
     </div>
-    <ng-template #noResults>
-      <div class="alert alert-info">
-        <strong>Nu s-au găsit produse</strong> care să corespundă criteriilor de căutare.
-      </div>
-    </ng-template>
+    <div *ngIf="items.length === 0" class="alert alert-warning">
+      <strong>Nu există produse disponibile.</strong>
+      <br>
+      <small>Asigură-te că tabelul "items" există în Supabase și conține date.</small>
+    </div>
   </div>
+  <ng-template #loading>
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Se încarcă...</span>
+      </div>
+      <p class="text-muted mt-3">Se încarcă produsele...</p>
+    </div>
+  </ng-template>
 </section>
