@@ -16,6 +16,12 @@ export class DetailsPageComponent {
   private readonly itemsService = inject(ItemsService);
 
   readonly item$ = this.route.paramMap.pipe(
-    switchMap((params) => this.itemsService.getItemById(params.get('id') ?? ''))
+    switchMap((params) => {
+      const id = params.get('id');
+      if (!id) {
+        return this.itemsService.getItemById('');
+      }
+      return this.itemsService.getItemById(id);
+    })
   );
 }

@@ -3,8 +3,8 @@
     ← Înapoi la listă
   </a>
 
-  <ng-container *ngIf="item$ | async as item; else missing">
-    <div class="row g-4 align-items-center">
+  <ng-container *ngIf="item$ | async as item">
+    <div *ngIf="item; else missing" class="row g-4 align-items-center">
       <div class="col-md-5">
         <img class="img-fluid rounded-4 shadow-sm" [src]="item.image" [alt]="item.title" />
       </div>
@@ -14,12 +14,12 @@
         <p class="lead text-secondary">{{ item.description }}</p>
         <div class="d-flex gap-4 align-items-center my-3">
           <span class="display-6 fw-bold text-primary">{{ item.price | currency: 'RON' }}</span>
-          <span class="badge" [class.bg-success]="item.stock > 0" [class.bg-danger]="item.stock === 0">
-            {{ item.stock > 0 ? (item.stock + ' în stoc') : 'Stoc epuizat' }}
+          <span class="badge" [class.bg-success]="(item.stock ?? 0) > 0" [class.bg-danger]="(item.stock ?? 0) === 0">
+            {{ (item.stock ?? 0) > 0 ? (item.stock + ' în stoc') : 'Stoc epuizat' }}
           </span>
         </div>
 
-        <div *ngIf="item.availableSizes.length">
+        <div *ngIf="item.availableSizes && item.availableSizes.length > 0">
           <p class="fw-semibold mb-1">Mărimi disponibile</p>
           <div class="d-flex flex-wrap gap-2">
             <span class="badge rounded-pill text-bg-dark" *ngFor="let size of item.availableSizes">
@@ -29,9 +29,8 @@
         </div>
       </div>
     </div>
+    <ng-template #missing>
+      <div class="alert alert-warning mt-4">Produsul nu a fost găsit.</div>
+    </ng-template>
   </ng-container>
-
-  <ng-template #missing>
-    <div class="alert alert-warning mt-4">Produsul nu a fost găsit.</div>
-  </ng-template>
 </section>

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './home/header/header';
 import { FooterComponent } from './home/footer/footer';
@@ -11,11 +11,12 @@ import { ItemsService } from './core/services/items.service';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
   private readonly itemsService = inject(ItemsService);
   protected readonly title = signal('AsisPentruCreareSiteWeb');
 
-  constructor() {
+  ngOnInit() {
+    // Încarcă datele din JSON
     this.itemsService.load().subscribe();
   }
 }

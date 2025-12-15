@@ -16,7 +16,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto gap-lg-2">
+      <ul class="navbar-nav ms-auto gap-lg-2 align-items-center">
         <li class="nav-item" *ngFor="let link of navLinks">
           <a
             class="nav-link"
@@ -26,6 +26,16 @@
           >
             {{ link.label }}
           </a>
+        </li>
+        <li class="nav-item">
+          <button 
+            class="btn btn-outline-light btn-sm"
+            (click)="toggleTheme()"
+            type="button"
+            [title]="(isDarkMode() ? 'Activează' : 'Dezactivează') + ' modul deschis'">
+            <span *ngIf="isDarkMode()">☀️</span>
+            <span *ngIf="!isDarkMode()">🌙</span>
+          </button>
         </li>
       </ul>
     </div>

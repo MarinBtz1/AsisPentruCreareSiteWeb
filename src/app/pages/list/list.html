@@ -1,21 +1,70 @@
 <section class="container">
-  <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
-    <div>
-      <p class="text-uppercase text-secondary small mb-1">Catalog complet</p>
-      <h1 class="h3 fw-semibold mb-0">Toate articolele disponibile</h1>
-    </div>
-    <a class="btn btn-outline-dark" routerLink="/about">Despre proiect</a>
+  <header class="mb-4">
+    <p class="text-uppercase text-secondary small mb-1">Catalog complet</p>
+    <h1 class="h3 fw-semibold mb-0">Toate articolele disponibile</h1>
   </header>
 
-  <div *ngIf="items$ | async as items; else loading">
-    <div class="row g-4">
-      <div class="col-md-4" *ngFor="let item of items">
-        <app-item-card [item]="item"></app-item-card>
+  <!-- Search and Filter Section -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="searchInput" class="form-label">Căutare</label>
+          <input 
+            type="text" 
+            id="searchInput"
+            class="form-control" 
+            placeholder="Caută după nume, descriere sau categorie..."
+            [(ngModel)]="searchTerm"
+          />
+        </div>
+        <div class="col-md-3">
+          <label for="categoryFilter" class="form-label">Categorie</label>
+          <select 
+            id="categoryFilter"
+            class="form-select" 
+            [(ngModel)]="selectedCategory"
+            *ngIf="items$ | async as items"
+          >
+            <option value="all">Toate categoriile</option>
+            <option *ngFor="let cat of getUniqueCategories(items)" [value]="cat">{{ cat }}</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="sortSelect" class="form-label">Sortare</label>
+          <select 
+            id="sortSelect"
+            class="form-select" 
+            [(ngModel)]="sortBy"
+          >
+            <option value="name-asc">Nume A-Z</option>
+            <option value="name-desc">Nume Z-A</option>
+            <option value="price-asc">Preț crescător</option>
+            <option value="price-desc">Preț descrescător</option>
+            <option value="stock-desc">Stoc descrescător</option>
+            <option value="stock-asc">Stoc crescător</option>
+          </select>
+        </div>
       </div>
     </div>
   </div>
 
-  <ng-template #loading>
-    <div class="text-center py-5 text-secondary">Se încarcă datele din JSON...</div>
-  </ng-template>
+  <!-- Items List -->
+  <div *ngIf="items$ | async as items">
+    <div *ngIf="getFilteredAndSortedItems(items).length > 0; else noResults">
+      <div class="row g-4">
+        <div class="col-md-4" *ngFor="let item of getFilteredAndSortedItems(items)">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+      </div>
+      <p class="text-muted mt-3">
+        Afișate {{ getFilteredAndSortedItems(items).length }} din {{ items.length }} produse
+      </p>
+    </div>
+    <ng-template #noResults>
+      <div class="alert alert-info">
+        <strong>Nu s-au găsit produse</strong> care să corespundă criteriilor de căutare.
+      </div>
+    </ng-template>
+  </div>
 </section>

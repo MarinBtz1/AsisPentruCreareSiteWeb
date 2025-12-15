@@ -1,10 +1,15 @@
 export interface Item {
-  id: string;
+  id?: string;
   title: string;
-  category: string;
+  category?: string;
   price: number;
   image: string;
-  description: string;
-  availableSizes: string[];
-  stock: number;
+  description?: string;
+  availableSizes?: string[];
+  stock?: number;
+}
+
+export interface Category {
+  id?: string;
+  name: string;
 }

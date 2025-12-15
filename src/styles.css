@@ -10,4 +10,51 @@ body {
   margin: 0;
   min-height: 100vh;
   background-color: #f4f6f9;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode styles */
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .card {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+body.dark-mode .table {
+  color: #e0e0e0;
+}
+
+body.dark-mode .table-hover tbody tr:hover {
+  background-color: #3d3d3d;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+  background-color: #2d2d2d;
+  border-color: #0d6efd;
+  color: #e0e0e0;
+}
+
+body.dark-mode .text-secondary {
+  color: #b0b0b0 !important;
+}
+
+body.dark-mode .text-muted {
+  color: #909090 !important;
 }
