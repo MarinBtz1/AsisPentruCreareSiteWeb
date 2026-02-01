@@ -39,3 +39,6 @@ INSERT INTO items (id, title, category, price, image, description, "availableSiz
 ('12', 'Vestă termică pentru iarnă', 'Outdoor', 420, 'https://api.soling.md/media/productsimage/DSC_5202.webp', 'Vestă termică ușoară, perfectă pentru sezonul rece, cu umplutură sintetică de înaltă calitate.', '["S", "M", "L", "XL", "XXL"]'::jsonb, 21)
 ON CONFLICT (id) DO NOTHING;
 
+
+
+

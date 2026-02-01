@@ -120,3 +120,6 @@ Aplicația citește datele din Firestore folosind:
 
 
 
+
+
+

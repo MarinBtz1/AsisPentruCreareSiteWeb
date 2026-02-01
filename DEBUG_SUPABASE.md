@@ -143,3 +143,6 @@ Dacă problema persistă după ce ai urmat pașii de mai sus, verifică:
 - Dacă proiectul Supabase este activ
 - Dacă există restricții de rețea (firewall, VPN)
 
+
+
+

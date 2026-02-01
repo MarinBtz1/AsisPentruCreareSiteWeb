@@ -106,3 +106,6 @@ Tabelul `items` trebuie să aibă următoarea structură:
 - `ItemsService` a fost modificat pentru a folosi Supabase în loc de fișierul JSON
 - Dacă întâmpini probleme, verifică consola browserului pentru erori
 
+
+
+
